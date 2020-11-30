@@ -1,0 +1,5 @@
+- include_tasks: install-nginx.yml
+  when: NGINX_FRONTEND_PORT != false
+- include_tasks: setup-nginx.yml
+  when: NGINX_FRONTEND_PORT != false
+- include_tasks: install-retrieval.yml

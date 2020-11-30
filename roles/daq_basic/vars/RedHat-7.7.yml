@@ -1,0 +1,6 @@
+pkgs:
+  - java-12-openjdk
+  - java-13-openjdk
+  - rh-postgresql12
+  - rh-postgresql12-postgresql-server
+  - nginx

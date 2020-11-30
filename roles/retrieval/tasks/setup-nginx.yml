@@ -1,0 +1,13 @@
+- include_vars: "{{retrieval_config_space}}/{{retrieval_instance}}/retrieval.yml"
+- include_vars: "vars_retrieval.yml"
+- template:
+    dest: /etc/nginx/nginx.conf
+    mode: 0644
+    owner: nginx
+    group: nginx
+    src: nginx.conf
+- systemd:
+    name: nginx
+    enabled: true
+    state: restarted
+    daemon_reload: true

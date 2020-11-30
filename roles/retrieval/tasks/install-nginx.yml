@@ -1,0 +1,5 @@
+- include_vars: "{{retrieval_config_space}}/{{retrieval_instance}}/retrieval.yml"
+- include_vars: "vars_retrieval.yml"
+- yum:
+    name: nginx
+    state: present

@@ -1,0 +1,17 @@
+{
+  "splitNodes": [
+    { "split":  0, "host": "sf-daq-5", "port": 1 },
+    { "split":  1, "host": "sf-daq-5", "port": 1 },
+    { "split":  2, "host": "sf-daq-5", "port": 1 },
+    { "split":  3, "host": "sf-daq-5", "port": 1 }
+  ],
+  "mergeLocal": true,
+  "database": {
+    "host": "sf-daqbuf-33",
+    "port": 5432,
+    "database": "daqbuffer",
+    "username": "daqbuffer",
+    "password": "daqbuffer"
+  },
+  "backend": "sf-imagebuffer"
+}

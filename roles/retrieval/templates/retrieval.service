@@ -1,0 +1,26 @@
+[Unit]
+Description={{RETRIEVAL_SERVICE_DESCRIPTION}}
+
+[Service]
+User=daqusr
+ExecStart=/usr/lib/jvm/jre-{{JRE_OPENJDK_VERSION_MAJOR}}-openjdk/bin/java \
+-Dserver.port={{RETRIEVAL_PORT}} \
+-Dretrieval.dataBaseDir={{databuffer_base_dir}} \
+-Dretrieval.baseKeyspaceName={{databuffer_ks_prefix}} \
+-Dretrieval.configFile={{RETRIEVAL_CONFIG_JSON}} \
+-Dtoken=3ec88a27 \
+-Xms1024m \
+-Xmx2048m \
+-XX:MaxDirectMemorySize=2048m \
+-DDDDio.netty.maxDirectMemory=2048m \
+-Djdk.nio.maxCachedBufferSize=20000 \
+-Dnnlogging.pattern.console= \
+-Dnnlogging.file.name=retrieval.log \
+-jar /opt/retrieval/{{JAR}}
+WorkingDirectory={{RETRIEVAL_WD}}
+
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

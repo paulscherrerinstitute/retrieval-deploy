@@ -1,0 +1,9 @@
+- hosts: retrieval
+  become: true
+  gather_facts: false
+  pre_tasks:
+    - setup:
+        gather_subset: min
+  roles:
+    - daq_basic
+    - retrieval

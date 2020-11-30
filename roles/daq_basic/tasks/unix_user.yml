@@ -1,0 +1,11 @@
+- become: true
+  group:
+    name: daq
+    gid: "{{daqusr_unix_gid}}"
+    state: present
+- become: true
+  user:
+    name: daqusr
+    uid: "{{daqusr_unix_uid}}"
+    group: daq
+    state: present

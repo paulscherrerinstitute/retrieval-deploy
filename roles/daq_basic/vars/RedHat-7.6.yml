@@ -1,0 +1,3 @@
+pkgs:
+  - java-12-openjdk
+  - nginx

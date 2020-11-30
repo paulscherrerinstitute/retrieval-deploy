@@ -1,0 +1,25 @@
+{
+  "splitNodes": [
+    { "split":  0, "host": "sf-daqbuf-21", "port": {{RETRIEVAL_PORT}} },
+    { "split":  1, "host": "sf-daqbuf-22", "port": {{RETRIEVAL_PORT}} },
+    { "split":  2, "host": "sf-daqbuf-23", "port": {{RETRIEVAL_PORT}} },
+    { "split":  3, "host": "sf-daqbuf-24", "port": {{RETRIEVAL_PORT}} },
+    { "split":  4, "host": "sf-daqbuf-25", "port": {{RETRIEVAL_PORT}} },
+    { "split":  5, "host": "sf-daqbuf-26", "port": {{RETRIEVAL_PORT}} },
+    { "split":  6, "host": "sf-daqbuf-27", "port": {{RETRIEVAL_PORT}} },
+    { "split":  7, "host": "sf-daqbuf-28", "port": {{RETRIEVAL_PORT}} },
+    { "split":  8, "host": "sf-daqbuf-29", "port": {{RETRIEVAL_PORT}} },
+    { "split":  9, "host": "sf-daqbuf-30", "port": {{RETRIEVAL_PORT}} },
+    { "split": 10, "host": "sf-daqbuf-31", "port": {{RETRIEVAL_PORT}} },
+    { "split": 11, "host": "sf-daqbuf-32", "port": {{RETRIEVAL_PORT}} },
+    { "split": 12, "host": "sf-daqbuf-33", "port": {{RETRIEVAL_PORT}} }
+  ],
+  "database": {
+    "host": "sf-daqbuf-33",
+    "port": 5432,
+    "database": "daqbuffer",
+    "username": "daqbuffer",
+    "password": "daqbuffer"
+  },
+  "backend": "sf-databuffer"
+}

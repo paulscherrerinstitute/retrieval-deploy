@@ -1,0 +1,34 @@
+- include_vars: "{{retrieval_config_space}}/{{retrieval_instance}}/retrieval.yml"
+- include_vars: "vars_retrieval.yml"
+
+- file:
+    path: "{{RETRIEVAL_WD}}"
+    owner: daqusr
+    group: daq
+    mode: 0755
+    state: directory
+- systemd:
+    name: "{{RETRIEVAL_SERVICE_NAME}}"
+    state: stopped
+  ignore_errors: true
+- get_url:
+    url: "https://data-api.psi.ch/distribute/retrieval/{{JAR}}"
+    dest: "/opt/retrieval/{{JAR}}"
+    mode: 0644
+- template:
+    dest: "{{RETRIEVAL_CONFIG_JSON}}"
+    mode: 0644
+    owner: daqusr
+    group: daq
+    src: "{{RETRIEVAL_CONFIG_TEMPLATE}}"
+- template:
+    dest: "/etc/systemd/system/{{RETRIEVAL_SERVICE_NAME}}"
+    mode: 0644
+    owner: root
+    group: root
+    src: "{{RETRIEVAL_SERVICE_TEMPLATE}}"
+- systemd:
+    name: "{{RETRIEVAL_SERVICE_NAME}}"
+    enabled: true
+    state: restarted
+    daemon_reload: true
