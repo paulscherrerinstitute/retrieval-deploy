@@ -11,8 +11,7 @@ sf_data_api:
     databuffer_ks_prefix: "daq_swissfel"
     retrieval_config_space: "sf-databuffer"
     JRE_OPENJDK_VERSION_MAJOR: 13
-    #retrieval_instance: "01"
-    retrieval_instance: "00"
+    retrieval_instance: "01"
     NGINX_FRONTEND_PORT: 8371
 
 sf_data_api_A:

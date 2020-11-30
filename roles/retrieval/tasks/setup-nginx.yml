@@ -9,5 +9,5 @@
 - systemd:
     name: nginx
     enabled: true
-    state: restarted
+    state: reloaded
     daemon_reload: true
