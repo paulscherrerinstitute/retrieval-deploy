@@ -30,7 +30,7 @@ The playbook takes the executable from `sf-daqbuf-33` in directory `/usr/share/n
 This directory is used because our internal Artifactory server is not maintained since a long time and it is not
 clear how to get a user account.
 The above directory is made available via `https://data-api.psi.ch/distribute/retrieval` to all hosts for deployment
-using the `nginx` on `sf-daqbuf-33`.
+using the `nginx` on `sf-daqbuf-33` proxied through `data-api`.
 
 
 ## Deploy Retrieval
