@@ -7,3 +7,15 @@
   roles:
     - daq_basic
     - retrieval
+- hosts:
+    - hipa_data_api
+    - gls_data_api
+    - sf-daq-5.psi.ch
+    - sf_data_api
+  become: true
+  gather_facts: false
+  pre_tasks:
+    - setup:
+        gather_subset: min
+  roles:
+    - channel-import

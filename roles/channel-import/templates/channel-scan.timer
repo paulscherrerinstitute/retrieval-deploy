@@ -1,0 +1,8 @@
+[Unit]
+Description=channel-scan-timer
+
+[Timer]
+RandomizedDelaySec=20
+AccuracySec=1s
+OnActiveSec=2sec
+OnUnitInactiveSec=180sec

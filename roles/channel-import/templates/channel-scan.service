@@ -1,0 +1,7 @@
+[Unit]
+Description=Import DAQ Channels
+
+[Service]
+User=daqusr
+ExecStart={{DAQBUFFER_WD}}/{{DAQBUFFER_BIN}} import configs
+WorkingDirectory={{DAQBUFFER_WD}}

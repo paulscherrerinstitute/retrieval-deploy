@@ -1,0 +1,31 @@
+- file:
+    path: "{{DAQBUFFER_WD}}"
+    owner: daqusr
+    group: daq
+    mode: 0755
+    state: directory
+- systemd:
+    name: channel-scan.service
+    state: stopped
+  ignore_errors: yes
+- get_url:
+    url: "https://data-api.psi.ch/distribute/retrieval/{{DAQBUFFER_BIN}}"
+    dest: "{{DAQBUFFER_WD}}/{{DAQBUFFER_BIN}}"
+    mode: 0755
+- template:
+    dest: /etc/systemd/system/channel-scan.service
+    mode: 0644
+    owner: root
+    group: root
+    src: channel-scan.service
+- template:
+    dest: /etc/systemd/system/channel-scan.timer
+    mode: 0644
+    owner: root
+    group: root
+    src: channel-scan.timer
+- systemd:
+    name: channel-scan.timer
+    enabled: true
+    state: restarted
+    daemon_reload: true
